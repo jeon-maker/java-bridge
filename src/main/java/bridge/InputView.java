@@ -5,6 +5,8 @@ package bridge;
  */
 public class InputView {
 
+
+
     /**
      * 다리의 길이를 입력받는다.
      */
