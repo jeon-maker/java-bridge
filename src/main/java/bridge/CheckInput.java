@@ -2,7 +2,7 @@ package bridge;
 
 public class CheckInput {
     Constant constant;
-    private final String size;
+    private String size;
 
     private int size_;
 

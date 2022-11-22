@@ -13,7 +13,6 @@ class InputViewTest {
     static String Input;
 
 
-
     Constant constant;
 
     @DisplayName("올바른 숫자가 들어가면 동작한다")
