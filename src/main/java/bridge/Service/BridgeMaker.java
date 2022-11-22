@@ -1,5 +1,7 @@
-package bridge;
+package bridge.Service;
 
+
+import bridge.BridgeNumberGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 public class BridgeMaker {
 
     private final BridgeNumberGenerator bridgeNumberGenerator;
+    public static List<String> Bridge ;
 
     public BridgeMaker(BridgeNumberGenerator bridgeNumberGenerator) {
         this.bridgeNumberGenerator = bridgeNumberGenerator;
@@ -25,6 +28,7 @@ public class BridgeMaker {
             int generate = bridgeNumberGenerator.generate();
             bridge.add(UpOrDown(generate));
         }
+        this.Bridge = bridge;
         return bridge;
     }
 

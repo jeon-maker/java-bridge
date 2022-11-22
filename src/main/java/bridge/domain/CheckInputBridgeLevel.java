@@ -1,4 +1,6 @@
-package bridge;
+package bridge.domain;
+
+import bridge.Service.Constant;
 
 public class CheckInputBridgeLevel {
 

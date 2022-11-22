@@ -1,5 +1,6 @@
-package bridge;
+package bridge.domain;
 
+import bridge.Service.Constant;
 import camp.nextstep.edu.missionutils.Console;
 
 /**
@@ -18,7 +19,7 @@ public class InputView {
     /**
      * 다리의 길이를 입력받는다.
      */
-    public void readBridgeSize() {
+    public int readBridgeSize() {
         this.Input = Console.readLine();
         CheckInputBridgeSize checkInputBridgeSize = new CheckInputBridgeSize(Input);
         try {
@@ -26,6 +27,7 @@ public class InputView {
         }catch (IllegalArgumentException e){
             System.out.println(constant.ERROR);
         }
+        return size;
     }
 
     /**

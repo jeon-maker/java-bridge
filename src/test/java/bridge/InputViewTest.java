@@ -1,6 +1,8 @@
 package bridge;
 
-import camp.nextstep.edu.missionutils.Console;
+import bridge.Service.Constant;
+import bridge.domain.CheckInputBridgeLevel;
+import bridge.domain.CheckInputBridgeSize;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
