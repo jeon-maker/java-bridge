@@ -12,16 +12,17 @@ public class InputView {
 
     static int size;
 
+    static String Level ; // 위 , 아래
     Constant constant;
 
     /**
      * 다리의 길이를 입력받는다.
      */
     public void readBridgeSize() {
-        Input = Console.readLine();
-        CheckInput checkInput = new CheckInput(Input);
+        this.Input = Console.readLine();
+        CheckInputBridgeSize checkInputBridgeSize = new CheckInputBridgeSize(Input);
         try {
-            this.size = checkInput.checkBridgeSize();
+            this.size = checkInputBridgeSize.checkBridgeSize();
         }catch (IllegalArgumentException e){
             System.out.println(constant.ERROR);
         }
@@ -31,7 +32,9 @@ public class InputView {
      * 사용자가 이동할 칸을 입력받는다.
      */
     public String readMoving() {
-        return null;
+        this.Level = Console.readLine();
+        new CheckInputBridgeLevel(Level);
+        return Level;
     }
 
     /**

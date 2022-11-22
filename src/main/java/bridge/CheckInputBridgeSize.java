@@ -1,12 +1,12 @@
 package bridge;
 
-public class CheckInput {
+public class CheckInputBridgeSize {
     Constant constant;
     private String size;
 
     private int size_;
 
-    public CheckInput(String size) {
+    public CheckInputBridgeSize(String size) {
         this.size = size;
     }
 
@@ -31,4 +31,5 @@ public class CheckInput {
             System.out.println("범위 오류");
         }
     }
+
 }

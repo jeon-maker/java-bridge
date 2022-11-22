@@ -4,8 +4,6 @@ import camp.nextstep.edu.missionutils.Console;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class InputViewTest {
 
     static int Bridgesize;
@@ -19,10 +17,10 @@ class InputViewTest {
     @Test
     void readBridgeSize() {
         Input = "3";
-        CheckInput checkInput = new CheckInput(Input);
+        CheckInputBridgeSize checkInputBridgeSize = new CheckInputBridgeSize(Input);
         System.out.println("Input = " + Input);
         try {
-            checkInput.checkBridgeSize();
+            checkInputBridgeSize.checkBridgeSize();
         }catch (IllegalArgumentException e){
             System.out.println(constant.ERROR);
         }
@@ -33,11 +31,11 @@ class InputViewTest {
     @Test
     void readBridgeSize2() {
         Input = "abc";
-        CheckInput checkInput = new CheckInput(Input);
+        CheckInputBridgeSize checkInputBridgeSize = new CheckInputBridgeSize(Input);
         System.out.println("Input = " + Input);
         int size = 0;
         try {
-            size = checkInput.checkBridgeSize();
+            size = checkInputBridgeSize.checkBridgeSize();
         }catch (IllegalArgumentException e){
             System.out.println(constant.ERROR);
         }
@@ -48,19 +46,26 @@ class InputViewTest {
     @Test
     void readBridgeSize3() {
         Input = "400";
-        CheckInput checkInput = new CheckInput(Input);
+        CheckInputBridgeSize checkInputBridgeSize = new CheckInputBridgeSize(Input);
         System.out.println("Input = " + Input);
         int size = 0;
         try {
-            checkInput.checkBridgeSize();
+            checkInputBridgeSize.checkBridgeSize();
         }catch (IllegalArgumentException e){
             System.out.println(constant.ERROR);
         }
         System.out.println("size = " + size);
     }
 
+    @DisplayName("사용자가 이동할 칸에 대해서 올바른 값을 입력하는지 확인")
     @Test
     void readMoving() {
+        String Level = "o";
+
+        new CheckInputBridgeLevel(Level);
+
+        System.out.println("Level = " + Level);
+
     }
 
     @Test
