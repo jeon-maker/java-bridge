@@ -3,6 +3,7 @@ package bridge.controller;
 import bridge.BridgeNumberGenerator;
 import bridge.BridgeRandomNumberGenerator;
 import bridge.Service.BridgeMaker;
+import bridge.Service.OutputView;
 import bridge.domain.CheckMove;
 import bridge.domain.InputView;
 
@@ -22,6 +23,8 @@ public class BridgeGame {
     private static CheckMove checkMove;
 
     private static InputView inputView;
+
+    private static OutputView outputView;
 
     static int keepGoing = 1;
 
@@ -49,12 +52,14 @@ public class BridgeGame {
      */
     public int move() {
         String moveWhere = inputView.readMoving();
-        for(int i=0; i<size; i++){
-            int val = checkMove.checkMovable(bridge, moveWhere, i);
+        for(int step=0; step<size; step++){
+            int val = checkMove.checkMovable(bridge, moveWhere, step);
             if(val==1){
                 retry();
+                outputView.printMap(step,1,size);
                 break;
             }
+            outputView.printMap(step,0,size);
         }
 
     }
